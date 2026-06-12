@@ -19,7 +19,7 @@ class Node {
 class Stack {
     public:
     Node* Top;     // Points to top node
-    int sizee;     // Tracks stack size
+    int sizee;     // Stores current stack size
 
     // Constructor
     Stack() {
@@ -27,45 +27,32 @@ class Stack {
         sizee = 0;
     }
 
-    // Insert element at top
+    // push operation
     void push(int x) {
         // Create new node
-        Node* temp = new Node(x);
-
-        // Connect new node to old top
-        temp->next = Top;
-
-        // Move top to new node
-        Top = temp;
-
-        // Increase size
-        sizee++;
+        Node* temp = new Node(x);    
+        temp->next = Top;    // Connect new node to old top
+        Top = temp;     // Move top to new node
+        sizee++;    // Increase size
     }
 
-    // Remove top element
+    // pop element
     void pop() {
         // Underflow condition
         if (Top == NULL) {
             cout << "Stack Empty" << endl;
             return;
         }
-        // Store current top
-        Node* temp = Top;
-
-        // Move top forward
-        Top = Top->next;
-
-        // Delete old top
-        delete temp;
-
-        // Decrease size
-        sizee--;
+        
+        Node* temp = Top;    // Store current top
+        Top = Top->next;    // Move top forward
+        delete temp;     // Delete old top
+        sizee--;     // Decrease size
     }
 
     // Return top element
     int top() {
         if (Top == NULL) return -1;
-
         return Top->data;
     }
 
@@ -78,7 +65,6 @@ class Stack {
     bool isEmpty() {
         return Top == NULL;
     }
-
 };
 
 

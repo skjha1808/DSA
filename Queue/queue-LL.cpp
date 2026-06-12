@@ -56,13 +56,10 @@ class Queue {
 
         // Store current front
         Node* temp = front;
-
         // Move front
         front = front->next;
-
         // Delete old node
         delete temp;
-        
         // If queue becomes empty
         if (front == NULL) {
             rear = NULL;
@@ -94,7 +91,6 @@ class Queue {
     bool isEmpty() {
         return front == NULL;
     }
-
 };
 
 

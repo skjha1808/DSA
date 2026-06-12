@@ -10,11 +10,9 @@ class myStack {
     public:
     // Constructor
     myStack(int n) {
-        size = n;
-        // Create array
-        arr = new int[size];
-        // Initially stack is empty
-        top = -1;
+        size = n;    // initialize size
+        arr = new int[size];    // Create array
+        top = -1;     // Initially stack is empty
     }
 
     // Check stack empty
@@ -27,41 +25,44 @@ class myStack {
         return top == size - 1;
     }
 
-    // Insert element at top
+    // push operation
     void push(int x) {
         // Overflow condition
         if (isFull()) {
             cout << "Stack Overflow" << endl;
             return;
         }
-        // Move top and insert
+        // Move top and insert element
         top++;
         arr[top] = x;
     }
 
-    // Remove top element
+    // pop operation
     void pop() {
         // Underflow condition
         if (isEmpty()) {
             cout << "Stack Underflow" << endl;
             return;
         }
-        // Remove top
+        // Remove top element
         top--;
     }
 
-    // Return top element
+    // peek operation
     int peek() {
+        // stack empty
         if (isEmpty()) {
             cout << "Stack is Empty" << endl;
             return -1;
         }
+        // Return top element
         return arr[top];
     }
 };
 
 
 int main() {
+    // Create stack of size 5
     myStack st(5);
 
     st.push(10);
