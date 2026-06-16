@@ -55,8 +55,7 @@ string infixToPostfix(string s){
             2. Same precedence and current operator is not '^'.
             '^' is right associative
             */
-            while(!st.empty() && (prec(st.top()) > prec(ch) || 
-            (prec(st.top()) == prec(ch) && ch != '^'))){
+            while(!st.empty() && (prec(st.top()) >= prec(ch) && ch != '^')){
                 ans += st.top();
                 st.pop();
             }
@@ -78,8 +77,8 @@ string infixToPostfix(string s){
 int main(){
 
     // Infix expression
-    string s = "A+B*C";
-    // string s = "A^B^C";
+    // string s = "A+B*C";
+    string s = "A^B^C";
 
     // Convert and print postfix
     cout << infixToPostfix(s);
