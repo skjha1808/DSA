@@ -75,7 +75,6 @@ string infixToPostfix(string s){
 }
 
 int main(){
-
     // Infix expression
     // string s = "A+B*C";
     string s = "A^B^C";
