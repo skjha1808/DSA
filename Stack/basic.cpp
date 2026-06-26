@@ -2,6 +2,7 @@
 using namespace std;
 
 int main() {
+    // stack -> LIFO
     stack<int> st;
 
     st.push(10);
@@ -9,13 +10,11 @@ int main() {
     st.push(30);
 
     cout <<"Size: " <<st.size() <<endl;
-
     cout <<"Top element: " <<st.top() <<endl;
 
     st.pop();
     
     cout <<"Top element: " <<st.top() <<endl;
-
     cout <<"Size: " <<st.size() <<endl;
 
     if(st.empty()){
